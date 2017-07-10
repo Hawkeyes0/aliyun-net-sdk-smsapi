@@ -13,76 +13,68 @@ namespace Aliyuncs.Utils
         private const String FORMAT_ISO8601 = "yyyy-MM-dd'T'HH:mm:ss'Z'";
         private const String FORMAT_RFC2616 = "EEE, dd MMM yyyy HH:mm:ss zzz";
 
-        public static String getUniqueNonce()
+        public static String GetUniqueNonce()
         {
             Guid uuid = Guid.NewGuid();
             return uuid.ToString("N");
         }
 
-        public static String getISO8601Time(DateTime date)
+        public static String GetISO8601Time(DateTime date)
         {
             DateTime nowDate = date;
             if (null == date)
             {
                 nowDate = DateTime.UtcNow;
             }
-            SimpleDateFormat df = new SimpleDateFormat(FORMAT_ISO8601);
-            df.setTimeZone(new SimpleTimeZone(0, TIME_ZONE));
 
-            return df.format(nowDate);
+            return nowDate.ToString(FORMAT_ISO8601);
         }
 
-        public static String getRFC2616Date(DateTime date)
+        public static String GetRFC2616Date(DateTime date)
         {
             DateTime nowDate = date;
             if (null == date)
             {
                 nowDate = DateTime.UtcNow;
             }
-            SimpleDateFormat df = new SimpleDateFormat(FORMAT_RFC2616, Locale.ENGLISH);
-            df.setTimeZone(new SimpleTimeZone(0, TIME_ZONE));
-            return df.format(nowDate);
+            return nowDate.ToString(FORMAT_RFC2616);
         }
 
-        public static DateTime parse(String strDate)
+        public static DateTime? Parse(String strDate)
         {
-            if (null == strDate || "".equals(strDate))
+            if (null == strDate || "".Equals(strDate))
             {
                 return null;
             }
             try
             {
-                return parseISO8601(strDate);
+                return ParseISO8601(strDate);
             }
-            catch (ParseException exp)
+            catch
             {
-                return parseRFC2616(strDate);
+                return ParseRFC2616(strDate);
             }
         }
 
-        public static DateTime parseISO8601(String strDate)
+        public static DateTime? ParseISO8601(String strDate)
         {
-            if (null == strDate || "".equals(strDate))
+            if (null == strDate || "".Equals(strDate))
             {
                 return null;
             }
-            SimpleDateFormat df = new SimpleDateFormat(FORMAT_ISO8601);
-            df.setTimeZone(new SimpleTimeZone(0, TIME_ZONE));
-            return df.parse(strDate);
+            return DateTime.Parse(strDate);
         }
 
-        public static DateTime parseRFC2616(String strDate)
+        public static DateTime? ParseRFC2616(String strDate)
         {
-            if (null == strDate || "".equals(strDate) || strDate.length() != FORMAT_RFC2616.length())
+            if (null == strDate || "".Equals(strDate) || strDate.Length != FORMAT_RFC2616.Length)
             {
                 return null;
             }
-            SimpleDateFormat df = new SimpleDateFormat(FORMAT_RFC2616, Locale.ENGLISH);
-            df.setTimeZone(new SimpleTimeZone(0, TIME_ZONE));
-            return df.parse(strDate);
+            return DateTime.Parse(strDate);
         }
 
-        public static String md5Sum(byte[] buff)
+        public static String Md5Sum(byte[] buff)
         {
             try
             {

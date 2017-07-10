@@ -22,7 +22,7 @@ namespace Aliyuncs
 
         public DefaultAcsClient()
         {
-            clientProfile = DefaultProfile.GetProfile();
+            clientProfile = DefaultProfile.Profile;
         }
 
         public DefaultAcsClient(IClientProfile profile)
@@ -50,7 +50,7 @@ namespace Aliyuncs
             bool retry = autoRetry;
             int retryNumber = maxRetryNumber;
             ISigner signer = null;
-            FormatType format = null;
+            FormatType format = FormatType.UNKNOWN;
             List<Endpoint> endpoints = null;
             if (null == request.RegionId)
             {
@@ -218,7 +218,7 @@ namespace Aliyuncs
             }
             String responseEndpoint = clasz.Name.Substring(clasz.FullName.LastIndexOf(".") + 1);
             context.ResponseMap = reader.Read(stringContent, responseEndpoint);
-            context.HttpResponse=httpResponse;
+            context.HttpResponse = httpResponse;
             response.GetInstance(context);
             return response;
         }
@@ -234,7 +234,7 @@ namespace Aliyuncs
                 }
                 else
                 {
-                    stringContent = httpResponse.Encoding.GetString(httpResponse.Content);
+                    stringContent = Encoding.GetEncoding(httpResponse.Encoding).GetString(httpResponse.Content);
                 }
             }
             catch
@@ -251,7 +251,7 @@ namespace Aliyuncs
             IReader reader = ReaderFactory.CreateInstance(format);
             UnmarshallerContext context = new UnmarshallerContext();
             String stringContent = GetResponseContent(httpResponse);
-            context.ResponseMap=reader.Read(stringContent, responseEndpoint);
+            context.ResponseMap = reader.Read(stringContent, responseEndpoint);
             return error.GetInstance(context) as AcsError;
         }
     }

@@ -24,14 +24,14 @@ namespace Aliyuncs
 
         public AcsRequest(String product) : base(null)
         {
-            this.headers.put("x-sdk-client", "Java/2.0.0");
-            this.product = product;
+            Headers["x-sdk-client"] = "Java/2.0.0";
+            Product = product;
         }
 
         public AcsRequest(String product, String version) : base(null)
         {
-            this.product = product;
-            this.setVersion(version);
+            Product = product;
+            Version = version;
         }
 
         internal HttpRequest SignRequest(ISigner signer, Credential credential, FormatType format, ProductDomain domain)
@@ -40,5 +40,10 @@ namespace Aliyuncs
         }
 
         public abstract Type GetResponseClass();
+
+        protected void PutQueryParameter(String name, String value)
+        {
+            QueryParameters[name] = value;
+        }
     }
 }

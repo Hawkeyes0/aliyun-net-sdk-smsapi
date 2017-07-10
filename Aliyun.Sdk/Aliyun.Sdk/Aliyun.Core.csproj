@@ -45,8 +45,10 @@
     <Compile Include="AcsRequest.cs" />
     <Compile Include="AcsResponse.cs" />
     <Compile Include="Auth\Credential.cs" />
+    <Compile Include="Auth\ICredentialProvider.cs" />
     <Compile Include="Auth\ISignatureComposer.cs" />
     <Compile Include="Auth\ISigner.cs" />
+    <Compile Include="Auth\RpcSignatureComposer.cs" />
     <Compile Include="DefaultAcsClient.cs" />
     <Compile Include="Exceptions\InvalidKeyException.cs" />
     <Compile Include="Exceptions\ClientException.cs" />
@@ -64,11 +66,20 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reader\Reader.cs" />
     <Compile Include="Reader\ReaderFactory.cs" />
+    <Compile Include="Regions\DescribeEndpointService.cs" />
+    <Compile Include="Regions\DescribeEndpointServiceImpl.cs" />
     <Compile Include="Regions\Endpoint.cs" />
+    <Compile Include="Regions\IEndpointsProvider.cs" />
+    <Compile Include="Regions\InternalEndpointsParser.cs" />
+    <Compile Include="Regions\LocationConfig.cs" />
     <Compile Include="Regions\ProductDomain.cs" />
+    <Compile Include="Regions\RemoteEndpointsParser.cs" />
     <Compile Include="Transform\UnmarshallerContext.cs" />
+    <Compile Include="Utils\FormatTypeHelper.cs" />
     <Compile Include="Utils\ParameterHelper.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="RpcAcsRequest.cs" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

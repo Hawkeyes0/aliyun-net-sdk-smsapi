@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aliyun.Core", "Aliyun.Sdk\A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aliyun.SmsApi", "Aliyun.SmsApi\Aliyun.SmsApi.csproj", "{1CBC9F59-A9F5-4C3D-8DB2-19C4B952067C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{AF0847AC-D3CF-4677-A8FE-A0E156C624F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSmsApi", "TestSmsApi\TestSmsApi.csproj", "{23FCB5F9-F474-4A22-A861-E8B8291A6926}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{1CBC9F59-A9F5-4C3D-8DB2-19C4B952067C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CBC9F59-A9F5-4C3D-8DB2-19C4B952067C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CBC9F59-A9F5-4C3D-8DB2-19C4B952067C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AF0847AC-D3CF-4677-A8FE-A0E156C624F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AF0847AC-D3CF-4677-A8FE-A0E156C624F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AF0847AC-D3CF-4677-A8FE-A0E156C624F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AF0847AC-D3CF-4677-A8FE-A0E156C624F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23FCB5F9-F474-4A22-A861-E8B8291A6926}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23FCB5F9-F474-4A22-A861-E8B8291A6926}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23FCB5F9-F474-4A22-A861-E8B8291A6926}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23FCB5F9-F474-4A22-A861-E8B8291A6926}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
