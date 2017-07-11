@@ -8,5 +8,9 @@ namespace Aliyuncs.Regions
 {
     public class InternalEndpointsParser : IEndpointsProvider
     {
+        public Endpoint GetEndpoint(string regionId, string product)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

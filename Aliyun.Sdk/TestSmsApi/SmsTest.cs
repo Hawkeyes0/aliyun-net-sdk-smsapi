@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Diagnostics;
 using Aliyuncs.Profile;
 using Aliyuncs;
+using Aliyun.SmsApi.Model;
 
 namespace TestSmsApi
 {
@@ -30,24 +31,24 @@ namespace TestSmsApi
             // 组装请求对象-具体描述见控制台-文档部分内容
             SendSmsRequest request = new SendSmsRequest();
             // 必填:待发送手机号
-            request.setPhoneNumbers("18611671896");
+            request.PhoneNumbers="18611671896";
             // 必填:短信签名-可在短信控制台中找到
-            request.setSignName("金色北京");
+            request.SignName="金色北京";
             // 必填:短信模板-可在短信控制台中找到
-            request.setTemplateCode("SMS_76495028");
+            request.TemplateCode="SMS_76495028";
             // 可选:模板中的变量替换JSON串,如模板内容为"亲爱的${name},您的验证码为${code}"时,此处的值为
             // request.setTemplateParam("{\"name\":\"Tom\", \"code\":\"123\"}");
             // 可选:outId为提供给业务方扩展字段,最终在短信回执消息中将此值带回给调用者
             // request.setOutId("yourOutId");
 
             // hint 此处可能会抛出异常，注意catch
-            SendSmsResponse sendSmsResponse = acsClient.getAcsResponse(request);
+            SendSmsResponse sendSmsResponse = acsClient.GetAcsResponse(request);
 
             Debug.WriteLine("短信接口返回的数据----------------");
-            Debug.WriteLine("Code=" + sendSmsResponse.getCode());
-            Debug.WriteLine("Message=" + sendSmsResponse.getMessage());
-            Debug.WriteLine("RequestId=" + sendSmsResponse.getRequestId());
-            Debug.WriteLine("BizId=" + sendSmsResponse.getBizId());
+            Debug.WriteLine("Code=" + sendSmsResponse.Code);
+            Debug.WriteLine("Message=" + sendSmsResponse.Message);
+            Debug.WriteLine("RequestId=" + sendSmsResponse.RequestId);
+            Debug.WriteLine("BizId=" + sendSmsResponse.BizId);
         }
     }
 }

@@ -16,5 +16,10 @@ namespace Aliyuncs.Regions
             parser.DescribeEndpointService = new DescribeEndpointServiceImpl();
             return parser;
         }
+
+        public Endpoint GetEndpoint(string regionId, string product)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
