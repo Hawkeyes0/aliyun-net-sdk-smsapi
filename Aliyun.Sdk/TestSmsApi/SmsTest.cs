@@ -41,13 +41,13 @@ namespace TestSmsApi
             // request.setOutId("yourOutId");
 
             // hint 此处可能会抛出异常，注意catch
-            SendSmsResponse sendSmsResponse = acsClient.GetAcsResponse(request);
+            //SendSmsResponse sendSmsResponse = acsClient.GetAcsResponse(request);
 
-            Debug.WriteLine("短信接口返回的数据----------------");
-            Debug.WriteLine("Code=" + sendSmsResponse.Code);
-            Debug.WriteLine("Message=" + sendSmsResponse.Message);
-            Debug.WriteLine("RequestId=" + sendSmsResponse.RequestId);
-            Debug.WriteLine("BizId=" + sendSmsResponse.BizId);
+            //Debug.WriteLine("短信接口返回的数据----------------");
+            //Debug.WriteLine("Code=" + sendSmsResponse.Code);
+            //Debug.WriteLine("Message=" + sendSmsResponse.Message);
+            //Debug.WriteLine("RequestId=" + sendSmsResponse.RequestId);
+            //Debug.WriteLine("BizId=" + sendSmsResponse.BizId);
         }
     }
 }
