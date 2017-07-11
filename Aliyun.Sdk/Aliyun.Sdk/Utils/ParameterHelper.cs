@@ -16,27 +16,20 @@ namespace Aliyuncs.Utils
         public static String GetUniqueNonce()
         {
             Guid uuid = Guid.NewGuid();
-            return uuid.ToString("N");
+            return uuid.ToString();
         }
 
-        public static String GetISO8601Time(DateTime date)
+        public static String GetISO8601Time(DateTime? date)
         {
-            DateTime nowDate = date;
-            if (null == date)
-            {
-                nowDate = DateTime.UtcNow;
-            }
+            DateTime nowDate = date ?? DateTime.UtcNow;
 
             return nowDate.ToString(FORMAT_ISO8601);
         }
 
-        public static String GetRFC2616Date(DateTime date)
+        public static String GetRFC2616Date(DateTime? date)
         {
-            DateTime nowDate = date;
-            if (null == date)
-            {
-                nowDate = DateTime.UtcNow;
-            }
+            DateTime nowDate = date ?? DateTime.UtcNow;
+
             return nowDate.ToString(FORMAT_RFC2616);
         }
 

@@ -6,6 +6,6 @@ namespace Aliyuncs.Reader
 {
     public interface IReader
     {
-        Dictionary<string,string> Read(string stringContent, string responseEndpoint);
+        Dictionary<string,string> Read(string response, string endpoint);
     }
 }

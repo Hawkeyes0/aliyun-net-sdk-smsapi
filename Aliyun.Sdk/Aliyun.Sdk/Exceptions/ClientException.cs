@@ -16,11 +16,12 @@ namespace Aliyuncs.Exceptions
             this.v = v;
         }
 
-        public ClientException(string errorCode, string errorMessage, string requestId)
+        public ClientException(string errorCode, string errorMessage, string requestId) : base($"{errorCode} : {errorMessage}")
         {
             this.errorCode = errorCode;
             this.errorMessage = errorMessage;
             this.requestId = requestId;
         }
+       
     }
 }

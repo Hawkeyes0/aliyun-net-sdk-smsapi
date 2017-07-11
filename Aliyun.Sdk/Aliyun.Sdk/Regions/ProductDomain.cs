@@ -6,13 +6,10 @@ namespace Aliyuncs.Regions
 {
     public class ProductDomain
     {
-        private string product;
-        private string domain;
-
         public ProductDomain(string product, string domain)
         {
-            this.product = product;
-            this.domain = domain;
+            ProductName = product;
+            DomianName = domain;
         }
 
         public string DomianName { get; internal set; }

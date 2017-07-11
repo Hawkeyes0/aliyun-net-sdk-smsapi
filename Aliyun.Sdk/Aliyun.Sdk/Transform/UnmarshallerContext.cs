@@ -10,10 +10,5 @@ namespace Aliyuncs.Transform
         public HttpResponse HttpResponse { get; internal set; }
         public Dictionary<string, string> ResponseMap { get; internal set; }
         public int HttpStatus { get; internal set; }
-
-        internal Dictionary<string, string> getResponseMap()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -110,7 +110,7 @@ namespace Aliyuncs
             try
             {
                 FormatType requestFormatType = request.AcceptFormat;
-                if (null != requestFormatType)
+                if (FormatType.UNKNOWN != requestFormatType)
                 {
                     format = requestFormatType;
                 }
@@ -203,7 +203,7 @@ namespace Aliyuncs
 
         private T ReadResponse<T>(Type clasz, HttpResponse httpResponse, FormatType format) where T : AcsResponse
         {
-            Assembly assembly = Assembly.Load(new AssemblyName(clasz.AssemblyQualifiedName));
+            Assembly assembly = clasz.Assembly;
             IReader reader = ReaderFactory.CreateInstance(format);
             UnmarshallerContext context = new UnmarshallerContext();
             T response = null;
@@ -216,7 +216,7 @@ namespace Aliyuncs
             {
                 throw new ClientException("SDK.InvalidResponseClass", "Unable to allocate " + clasz.FullName + " class");
             }
-            String responseEndpoint = clasz.Name.Substring(clasz.FullName.LastIndexOf(".") + 1);
+            String responseEndpoint = clasz.FullName.Substring(clasz.FullName.LastIndexOf(".") + 1);
             context.ResponseMap = reader.Read(stringContent, responseEndpoint);
             context.HttpResponse = httpResponse;
             response.GetInstance(context);

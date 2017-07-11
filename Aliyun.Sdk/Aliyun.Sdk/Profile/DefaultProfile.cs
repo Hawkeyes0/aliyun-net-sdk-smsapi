@@ -10,7 +10,7 @@ namespace Aliyuncs.Profile
     public class DefaultProfile : IClientProfile
     {
         public static DefaultProfile Profile { get; private set; } = new DefaultProfile();
-        public ISigner Signer { get; set; }
+        public ISigner Signer { get; set; } = ShaHmac1Singleton.INSTANCE;
         public FormatType Format { get; set; }
         public string RegionId { get; set; }
         public Credential Credential { get; set; }
@@ -21,8 +21,6 @@ namespace Aliyuncs.Profile
         private IEndpointsProvider remoteProvider = null;
         private ICredentialProvider icredential = null;
         private LocationConfig locationConfig = new LocationConfig();
-        private Credential credential = null;
-        private string regionId = null;
 
         private DefaultProfile()
         {
@@ -35,8 +33,8 @@ namespace Aliyuncs.Profile
         {
             iendpoints = new InternalEndpointsParser();
             remoteProvider = RemoteEndpointsParser.InitRemoteEndpointsParser();
-            credential = creden;
-            regionId = region;
+            Credential = creden;
+            RegionId = region;
             locationConfig = new LocationConfig();
         }
 

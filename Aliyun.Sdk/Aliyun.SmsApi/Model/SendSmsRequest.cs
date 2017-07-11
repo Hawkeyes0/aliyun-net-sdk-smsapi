@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Aliyuncs.Auth;
+using Aliyuncs.Http;
+using Aliyuncs.Regions;
 
 namespace Aliyun.SmsApi.Model
 {

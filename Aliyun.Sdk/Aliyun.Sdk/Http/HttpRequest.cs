@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Net;
 using System.Net.Cache;
+using System.Threading;
 
 namespace Aliyuncs.Http
 {
@@ -79,8 +80,8 @@ namespace Aliyuncs.Http
         public MethodType Method { get; set; }
         public byte[] Content { get; protected set; }
         public Dictionary<string, string> Headers { get; set; }
-        public int ConnectTimeout { get; set; }
-        public int ReadTimeout { get; set; }
+        public int ConnectTimeout { get; set; } = Timeout.Infinite;
+        public int ReadTimeout { get; set; } = Timeout.Infinite;
 
         public HttpRequest(String strUrl)
         {

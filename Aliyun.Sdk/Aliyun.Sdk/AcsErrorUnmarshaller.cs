@@ -11,7 +11,7 @@ namespace Aliyuncs
     {
         internal static AcsResponse Unmarshall(AcsError error, UnmarshallerContext context)
         {
-            Dictionary<string, string> map = context.getResponseMap();
+            Dictionary<string, string> map = context.ResponseMap;
             error.StatusCode = context.HttpStatus;
             error.RequestId = map["Error.RequestId"];
             error.ErrorCode = map["Error.Code"];

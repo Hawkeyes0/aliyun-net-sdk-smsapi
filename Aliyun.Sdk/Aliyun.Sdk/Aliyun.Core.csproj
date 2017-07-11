@@ -44,11 +44,14 @@
     <Compile Include="AcsErrorUnmarshaller.cs" />
     <Compile Include="AcsRequest.cs" />
     <Compile Include="AcsResponse.cs" />
+    <Compile Include="Auth\AcsURLEncoder.cs" />
     <Compile Include="Auth\Credential.cs" />
     <Compile Include="Auth\ICredentialProvider.cs" />
     <Compile Include="Auth\ISignatureComposer.cs" />
     <Compile Include="Auth\ISigner.cs" />
     <Compile Include="Auth\RpcSignatureComposer.cs" />
+    <Compile Include="Auth\ShaHmac1.cs" />
+    <Compile Include="Auth\ShaHmac1Singleton.cs" />
     <Compile Include="DefaultAcsClient.cs" />
     <Compile Include="Exceptions\InvalidKeyException.cs" />
     <Compile Include="Exceptions\ClientException.cs" />
@@ -64,8 +67,10 @@
     <Compile Include="Profile\DefaultProfile.cs" />
     <Compile Include="Profile\IClientProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reader\JsonReader.cs" />
     <Compile Include="Reader\Reader.cs" />
     <Compile Include="Reader\ReaderFactory.cs" />
+    <Compile Include="Reader\XmlReader.cs" />
     <Compile Include="Regions\DescribeEndpointService.cs" />
     <Compile Include="Regions\DescribeEndpointServiceImpl.cs" />
     <Compile Include="Regions\Endpoint.cs" />
@@ -75,8 +80,11 @@
     <Compile Include="Regions\ProductDomain.cs" />
     <Compile Include="Regions\RemoteEndpointsParser.cs" />
     <Compile Include="Transform\UnmarshallerContext.cs" />
+    <Compile Include="Utils\AsciiComparer.cs" />
+    <Compile Include="Utils\CharIterator.cs" />
     <Compile Include="Utils\FormatTypeHelper.cs" />
     <Compile Include="Utils\ParameterHelper.cs" />
+    <Compile Include="Utils\XmlChildNodes.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="RpcAcsRequest.cs" />

@@ -9,7 +9,12 @@ namespace Aliyuncs.Reader
     {
         internal static IReader CreateInstance(FormatType format)
         {
-            throw new NotImplementedException();
+            if (FormatType.JSON == format)
+                return new JsonReader();
+            if (FormatType.XML == format)
+                return new XmlReader();
+
+            return null;
         }
     }
 }
